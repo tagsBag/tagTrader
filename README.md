@@ -27,3 +27,7 @@
     只在 win10x64 系统测试运行成功,其他 window 版本 未测试
     centos 上可以运行
     macos 上没有 ctp 接口,可运行 oes 接口
+
+# 好项目
+    1.https://github.com/Qt-Widgets/QSimpleTickerGraph-CPU-Usage-History-Chart-Graph-Plot-Realtime
+        作者收集了大量 qt 程序,是个宝库
