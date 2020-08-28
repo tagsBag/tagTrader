@@ -31,3 +31,19 @@
 # 好项目
     1.https://github.com/Qt-Widgets/QSimpleTickerGraph-CPU-Usage-History-Chart-Graph-Plot-Realtime
         作者收集了大量 qt 程序,是个宝库
+
+# 事件引擎
+    1.有三类线程
+        1.事件接收线程一个
+            考虑到金融数据处理先后顺序重要,所以必须要有一个线程顺序接收 所有数据 打包 为 task 并维护一个队列
+        2.任务 task 处理,是个线程池
+            并发从 task 队列 获取 task 并处理
+            并发是策略级的,即同一个策略的 不同响应事件 不能并发执行
+            所以,某个线程获取到某个 task 后需要判断 该 task 所属 的 strategy 是否已有 某个线程正在处理,若有,则 将 task 排入 该 strategy 的 task 队列,若无,则开始处理
+            这种算法在 微妙以下 的 并发下 偶尔 会 发生 event 的 处理顺序 乱序
+    
+# python 策略
+    1.ebeding
+    2.call back
+    3.c++ thread gil
+
